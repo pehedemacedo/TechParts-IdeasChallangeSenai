@@ -5,8 +5,9 @@
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(6, 1fr);
     gap: 3px;
+    padding: 8px;
 }
-    
+
 .divChamadas {
     grid-column: span 2 / span 2;
     grid-row: span 2 / span 2;
@@ -69,12 +70,13 @@
     background-color: #153570;
     border-radius: 3px;
     margin-bottom: px;
+    padding: 4px;
 
 }
 
 .dashboard div h4 {
     color: rgb(255, 247, 0);
-    padding: auto;
+    padding: 4px;
 }
 
 .maqOp {
