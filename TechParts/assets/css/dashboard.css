@@ -1,97 +1,157 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f6f9;
+    color: #333333;
+}
+
+.navbar {
+    margin-bottom: 0;
+}
+
+.page-header {
+    padding: 40px 40px 0 40px;
+    margin-top: 56px;
+}
+
+.page-header h1 {
+    color: #153570;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.page-header p {
+    color: #6c757d;
+    font-size: 0.95rem;
+    margin-bottom: 24px;
+}
+
 /* Grid */
 .dashboard {
-    margin-top: 60px;
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(6, 1fr);
-    gap: 3px;
-    padding: 8px;
+    gap: 20px;
+    padding: 0 40px 40px 40px;
 }
 
-.divChamadas {
+.dashboard>div {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+}
+
+.dashboard h4 {
+    color: #153570;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+/* Cards de indicadores (linha 1 e o card de máquinas em atenção) */
+.stat-card {
     grid-column: span 2 / span 2;
-    grid-row: span 2 / span 2;
-
-    
+    text-align: center;
+    border-top: 4px solid #153570;
 }
 
-.divUrgente {
-    grid-column: span 2 / span 2;
-    grid-row: span 2 / span 2;
-    grid-column-start: 3;
-}
-
-.divMaqOp {
-    grid-column: span 2 / span 2;
-    grid-row: span 2 / span 2;
-    grid-column-start: 5;
-}
-
-.divRecentCalls {
+.stat-card.wide {
     grid-column: span 3 / span 3;
-    grid-row: span 2 / span 2;
-    grid-row-start: 3;
+    text-align: left;
+    border-top-color: #e74c3c;
 }
 
-.divMaqAtencao {
+.stat-number {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #153570;
+}
+
+.stat-number.caution {
+    color: #e74c3c;
+}
+
+.stat-number.urgent {
+    color: #e67e22;
+}
+
+.stat-number.success {
+    color: #2e7d32;
+}
+
+/* Painéis (chamados recentes, comunicados, mensagens) */
+.panel {
     grid-column: span 3 / span 3;
-    grid-row: span 2 / span 2;
-    grid-column-start: 4;
-    grid-row-start: 3;
 }
 
-.divComunicados {
-    grid-column: span 3 / span 3;
-    grid-row: span 2 / span 2;
-    grid-row-start: 5;
+.recent-list {
+    list-style: none;
 }
 
-.divRecenteMensagens {
-    grid-column: span 3 / span 3;
-    grid-row: span 2 / span 2;
-    grid-column-start: 4;
-    grid-row-start: 5;
-}
-     
-
-.divLine1 {
-    min-height: 50px;
+.recent-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid #e2e8f0;
+    font-size: 0.9rem;
+    color: #4a5568;
 }
 
-.divLine2 {
-    min-height: 70px 
+.recent-list li:last-child {
+    border-bottom: none;
 }
 
-/* ========= Style =========  */
-
-/* dashboard */
-
-.dashboard > div {
-    background-color: #153570;
-    border-radius: 3px;
-    margin-bottom: px;
-    padding: 4px;
-
+.empty-state {
+    color: #a0aec0;
+    font-size: 0.85rem;
+    font-style: italic;
 }
 
-.dashboard div h4 {
-    color: rgb(255, 247, 0);
-    padding: 4px;
+.message-item {
+    padding: 8px 0;
+    border-bottom: 1px solid #e2e8f0;
+    font-size: 0.9rem;
 }
 
-.maqOp {
-    color: white;
+.message-item:last-child {
+    border-bottom: none;
 }
 
-.cautionText {
-    color: red;
+.message-user {
+    color: #153570;
+    font-weight: 600;
 }
 
-.mensagensUser {
-    color: rgb(138, 199, 190);
+.message-text {
+    color: #4a5568;
 }
 
-.mensagens {
-    color: white
+@media (max-width: 992px) {
+    .stat-card {
+        grid-column: span 3 / span 3;
+    }
+
+    .stat-card.wide,
+    .panel {
+        grid-column: span 6 / span 6;
+    }
 }
 
+@media (max-width: 576px) {
+    .page-header {
+        padding: 20px 20px 0 20px;
+    }
+
+    .dashboard {
+        padding: 0 20px 20px 20px;
+        gap: 14px;
+    }
+
+    .stat-card {
+        grid-column: span 6 / span 6;
+    }
+}
