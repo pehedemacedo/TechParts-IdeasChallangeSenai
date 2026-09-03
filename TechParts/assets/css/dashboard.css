@@ -1,0 +1,95 @@
+/* Grid */
+.dashboard {
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    gap: 3px;
+}
+    
+.divChamadas {
+    grid-column: span 2 / span 2;
+    grid-row: span 2 / span 2;
+
+    
+}
+
+.divUrgente {
+    grid-column: span 2 / span 2;
+    grid-row: span 2 / span 2;
+    grid-column-start: 3;
+}
+
+.divMaqOp {
+    grid-column: span 2 / span 2;
+    grid-row: span 2 / span 2;
+    grid-column-start: 5;
+}
+
+.divRecentCalls {
+    grid-column: span 3 / span 3;
+    grid-row: span 2 / span 2;
+    grid-row-start: 3;
+}
+
+.divMaqAtencao {
+    grid-column: span 3 / span 3;
+    grid-row: span 2 / span 2;
+    grid-column-start: 4;
+    grid-row-start: 3;
+}
+
+.divComunicados {
+    grid-column: span 3 / span 3;
+    grid-row: span 2 / span 2;
+    grid-row-start: 5;
+}
+
+.divRecenteMensagens {
+    grid-column: span 3 / span 3;
+    grid-row: span 2 / span 2;
+    grid-column-start: 4;
+    grid-row-start: 5;
+}
+     
+
+.divLine1 {
+    min-height: 50px;
+}
+
+.divLine2 {
+    min-height: 70px 
+}
+
+/* ========= Style =========  */
+
+/* dashboard */
+
+.dashboard > div {
+    background-color: #153570;
+    border-radius: 3px;
+    margin-bottom: px;
+
+}
+
+.dashboard div h4 {
+    color: rgb(255, 247, 0);
+    padding: auto;
+}
+
+.maqOp {
+    color: white;
+}
+
+.cautionText {
+    color: red;
+}
+
+.mensagensUser {
+    color: rgb(138, 199, 190);
+}
+
+.mensagens {
+    color: white
+}
+

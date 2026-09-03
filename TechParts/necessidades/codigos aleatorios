@@ -1,0 +1,26 @@
+divisor linhas duplas com flexbox
+
+
+<style>
+  .divider-flex {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #666;
+    margin: 20px 0;
+  }
+
+  /* Aplica o estilo na linha esquerda e direita simultaneamente */
+  .divider-flex::before,
+  .divider-flex::after {
+    content: "";
+    flex: 1;
+    border-bottom: 2px solid #3498db;
+  }
+
+  /* Adiciona espaçamento ao redor do texto */
+  .divider-flex:not(:empty)::before { margin-right: 15px; }
+  .divider-flex:not(:empty)::after { margin-left: 15px; }
+</style>
+
+<div class="divider-flex">Conteúdo Central</div>
