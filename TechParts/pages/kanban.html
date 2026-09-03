@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kanban - TechParts</title>
+    <link rel="stylesheet" href="/assets/css/kanban.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+
+<body>
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand" href="#">TechParts - Sua empresa de Peças de Tecnologia</a>
+
+            <div class="offcanvas offcanvas-start text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar"
+                aria-labelledby="offcanvasDarkNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Nossas Paginas</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/pages/dashboard.html">Início</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/pages/chamadas.html">Chamadas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/pages/.html">iaubdaiubs</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/pages/kanban.html">Kanban</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Conta
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-dark">
+                                <li><a class="dropdown-item" href="/index.html">Cadastro</a></li>
+                                <li><a class="dropdown-item" href="/pages/configurações.html">Configurações</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="/index.html">Sair</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="kanban-board">
+            <div class="kanban-block" id="todo" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <strong>A fazer</strong>
+                <div class="task-button-block">
+                    <button id="task-button" onclick="createTask()">Criar Nova Tarefa :D</span>
+                </div>
+                <div class="task" id="task1" draggable="true" ondragstart="drag(event)" onclick="showTaskDescription(this)" data-name="Task 1" data-description="Descrição da Task 1.">
+                    <span>Task 1</span>
+                </div>
+                <div class="task" id="task2" draggable="true" ondragstart="drag(event)" onclick="showTaskDescription(this)" data-name="Task 2" data-description="Descrição da Task 2.">
+                    <span>Task 2</span>
+                </div>
+                <div class="task" id="task3" draggable="true" ondragstart="drag(event)" onclick="showTaskDescription(this)" data-name="Task 3" data-description="Descrição da Task 3.">
+                    <span>Task 3</span>
+                </div>
+            </div>
+            <div class="kanban-block" id="inprogress" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <strong>Em Progresso</strong>
+            </div>
+            <div class="kanban-block" id="done" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <strong>Feito</strong>
+            </div>
+            <div class="create-new-task-block" id="create-new-task-block">
+                <strong>Nova Tarefa:</strong>
+                <span class="form-row">
+                    <label class="form-row-label" for="task-name">Nome da Tarefa:</label>
+                    <input class="form-row-input" type="text" name="task-name" id="task-name">
+                </span>
+                <span class="form-row">
+                    <label class="form-row-label" for="task-name">Descrição</label>
+                    <textarea class="form-row-input" name="task-description" id="task-description" cols="70"
+                        rows="10"></textarea>
+                </span>
+                <span class="form-row-buttons">
+                    <button id="edit-button" onclick="editTask()">Edit</span>
+                <button id="save-button" onclick="saveTask()">Save</span>
+                    <button id="cancel-button" onclick="createTask()">Cancel</span>
+                        </span>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="taskModal" tabindex="-1" aria-labelledby="taskModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="taskModalLabel">Tarefa</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p id="taskModalDescription"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" id="taskModalDeleteButton" onclick="deleteTask()">Excluir</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/assets/js/kanban.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
