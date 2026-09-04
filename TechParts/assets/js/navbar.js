@@ -33,3 +33,16 @@ fetch("../assets/navbar.html")
     .catch(error => {
         console.error("Erro ao carregar a navbar:", error);
     });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const currentPage = window.location.pathname.split("/").pop() || "index.html";
+
+    document.querySelectorAll(".navbar-nav .nav-link").forEach(link => {
+        const linkPage = link.getAttribute("href").split("/").pop();
+
+        if (linkPage === currentPage) {
+            link.classList.add("active");
+            link.setAttribute("aria-current", "page");
+        }
+    });
+});

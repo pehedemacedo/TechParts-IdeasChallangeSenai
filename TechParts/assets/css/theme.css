@@ -96,3 +96,12 @@ html[data-theme="dark"] .btn-close {
     --bs-dropdown-divider-bg: var(--color-border);
     --bs-dropdown-border-color: var(--color-border);
 }
+
+.navbar-logo-img {
+    height: 50px;
+    width: auto;
+}
+
+html[data-theme="dark"] .navbar-logo-img {
+    content: url("../IMG/logo-branca.png");
+}
