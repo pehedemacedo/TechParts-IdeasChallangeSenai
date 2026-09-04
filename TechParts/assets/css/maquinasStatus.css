@@ -1,0 +1,102 @@
+.titulo {
+    text-align: center;
+    color: #153570;
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin: 0 0 6px 0;
+}
+
+/* grid */
+
+.parent {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 8px;
+}
+
+
+.parent>div {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    min-height: 90px;
+    background-color: #f8f9fa;
+    padding: 12px;
+    border-radius: 4px;
+    font-size: 1rem;
+    color: #6c757d;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.status {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    font-size: 0.9rem;
+    color: #28a745;
+}
+
+.progress-bar {
+    width: 80%;
+    height: 8px;
+    border: 1px solid #000000;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background-color: #00a608;
+}
+
+.progress-label {
+    font-size: 0.75rem;
+    color: #6c757d;
+}
+
+.maintenance-date {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    font-size: 0.75rem;
+    color: #6c757d;
+}
+
+/* Divisor */
+.divider-flex {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #6c757d;
+    font-size: 0.85rem;
+    margin: 12px 0 24px 0;
+}
+
+.divider-flex::before,
+.divider-flex::after {
+    content: "";
+    flex: 1;
+    border-bottom: 2px solid #153570;
+}
+
+.divider-flex:not(:empty)::before {
+    margin-right: 15px;
+}
+
+.divider-flex:not(:empty)::after {
+    margin-left: 15px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 92%;
+    }
+
+    .kanban-block {
+        width: 100%;
+    }
+}

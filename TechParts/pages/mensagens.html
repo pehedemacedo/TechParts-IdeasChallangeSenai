@@ -1,27 +1,120 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mensagens - TechParts</title>
+    <title>TechParts</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../css/style.css">
 </head>
+<body data-sector="producao" data-page="comunicacao">
+    <aside class="sidebar"></aside>
 
-<body>
-    <div id="Navbar" class="black"></div>
-    <script src="../assets/js/navbar.js"></script>
+    <main class="main">
+        <header class="topbar">
+            <div style="display: flex; align-items: center; gap: 10px">
+                <button class="mobile-menu" id="mobileMenu">☰</button>
+                <h1 id="pageTitle">Título</h1>
+            </div>
+            <span class="sector-pill" id="sectorPill"></span>
+        </header>
 
+        <section class="content">
+            <div class="welcome">
+                <div>
+                    <h2 id="sectionTitle">Título</h2>
+                    <p class="muted">Organize e acompanhe os registros deste setor.</p>
+                </div>
+                <div class="actions">
+                    <button class="btn secondary" onclick="history.back()">← Voltar</button>
+                    <button class="btn primary" id="mainAction">+ Novo registro</button>
+                </div>
+            </div>
+            <div id="dataList"></div>
+        </section>
+    </main>
 
-    <a href="#" class="login-button" onclick="openModal(); return false;">Nova Chamada</a>
+      <div class="modal" id="modal">
+        <div class="modal-card">
+            <div class="modal-head">
+                <h3>Novo chamado</h3>
+                <button class="close" onclick="closeModal('modal')">×</button>
+            </div>
+            <form onsubmit="newCall(event)">
+                <label>Problema
+                    <input name="titulo" required>
+                </label>
+                <label>Setor responsável
+                    <select name="setor">
+                        <option>Manutenção</option>
+                        <option>Qualidade</option>
+                        <option>Logística</option>
+                        <option>Engenharia</option>
+                        <option>TI</option>
+                        <option>Produção</option>
+                    </select>
+                </label>
+                <label>Prioridade
+                    <select name="prioridade">
+                        <option>Alta</option>
+                        <option>Média</option>
+                        <option>Baixa</option>
+                    </select>
+                </label>
+                <label>Responsável
+                    <input name="responsavel" placeholder="Nome">
+                </label>
+                <button class="btn primary full">Criar chamado</button>
+            </form>
+        </div>
+    </div>
 
-    <input type="text" id="searchInput" placeholder="Pesquisar por cliente, Máquina ou Status" onkeyup="searchTable()">
+    <div class="modal" id="messageModal">
+        <div class="modal-card">
+            <div class="modal-head">
+                <h3>Nova comunicação</h3>
+                <button class="close" onclick="closeModal('messageModal')">×</button>
+            </div>
+            <form onsubmit="newMessage(event)">
+                <label>Título
+                    <input name="titulo" required>
+                </label>
+                <label>Para
+                    <select name="para">
+                        <option>Produção</option>
+                        <option>Manutenção</option>
+                        <option>Qualidade</option>
+                        <option>Logística</option>
+                        <option>Engenharia</option>
+                        <option>TI</option>
+                    </select>
+                </label>
+                <label>Prioridade
+                    <select name="prioridade">
+                        <option>Normal</option>
+                        <option>Alta</option>
+                    </select>
+                </label>
+                <label>Mensagem
+                    <textarea name="texto" rows="4" required></textarea>
+                </label>
+                <button class="btn primary full">Enviar</button>
+            </form>
+        </div>
+    </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"></script>
+    <script src="../../js/app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const a = document.getElementById('mainAction');
+            const p = document.body.dataset.page;
+            if (a) {
+                if (p === 'chamados') a.onclick = () => openModal('modal');
+                else if (p === 'tarefas') a.onclick = () => openModal('taskModal');
+                else if (p === 'comunicacao') a.onclick = () => openModal('messageModal');
+                else a.style.display = 'none';
+            }
+        });
+    </script>
 </body>
-
 </html>
