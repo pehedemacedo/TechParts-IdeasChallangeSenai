@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configurações - TechParts</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/css/theme.css">
+    <link rel="stylesheet" href="../assets/css/config.css">
+</head>
+
+<body>
+    <script src="../assets/js/theme.js"></script>
+
+    <div id="Navbar"></div>
+    <script src="../assets/js/navbar.js"></script>
+
+    <div class="page-header">
+        <h1>Configurações</h1>
+        <p>Ajuste a exibição do site de acordo com a sua preferência.</p>
+    </div>
+
+    <div class="settings-list">
+        <div class="setting-card">
+            <div>
+                <h4>Modo Escuro</h4>
+                <p>Troca o fundo claro do site por um fundo escuro.</p>
+            </div>
+            <label class="switch">
+                <input type="checkbox" id="themeDarkInput">
+                <span class="switch-track"></span>
+            </label>
+        </div>
+
+        <div class="setting-card">
+            <div>
+                <h4>Modo Daltônico</h4>
+                <p>Troca as cores de status (vermelho/verde) por uma paleta mais fácil de diferenciar.</p>
+            </div>
+            <label class="switch">
+                <input type="checkbox" id="colorblindInput">
+                <span class="switch-track"></span>
+            </label>
+        </div>
+
+        <div class="setting-card">
+            <div>
+                <h4>Tamanho do Texto</h4>
+                <p>Aumenta ou diminui o tamanho dos textos em todo o site.</p>
+            </div>
+            <div class="font-size-control">
+                <button type="button" id="decreaseFontBtn" aria-label="Diminuir texto">A-</button>
+                <span id="fontScaleValue">100%</span>
+                <button type="button" id="increaseFontBtn" aria-label="Aumentar texto">A+</button>
+                <button type="button" id="resetFontBtn" aria-label="Restaurar tamanho padrão">↺</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../assets/js/config.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

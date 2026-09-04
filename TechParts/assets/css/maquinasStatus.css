@@ -1,6 +1,6 @@
 .titulo {
     text-align: center;
-    color: #153570;
+    color: var(--color-accent);
     font-size: 1.6rem;
     font-weight: 700;
     margin: 0 0 6px 0;
@@ -24,11 +24,11 @@
     align-items: center;
     gap: 6px;
     min-height: 90px;
-    background-color: #f8f9fa;
+    background-color: var(--color-surface-alt);
     padding: 12px;
     border-radius: 4px;
     font-size: 1rem;
-    color: #6c757d;
+    color: var(--color-text-secondary);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -37,7 +37,7 @@
     top: 8px;
     right: 8px;
     font-size: 0.9rem;
-    color: #28a745;
+    color: var(--color-success);
 }
 
 .progress-bar {
@@ -50,12 +50,12 @@
 
 .progress-fill {
     height: 100%;
-    background-color: #00a608;
+    background-color: var(--color-success);
 }
 
 .progress-label {
     font-size: 0.75rem;
-    color: #6c757d;
+    color: var(--color-text-secondary);
 }
 
 .maintenance-date {
@@ -63,7 +63,7 @@
     bottom: 8px;
     right: 8px;
     font-size: 0.75rem;
-    color: #6c757d;
+    color: var(--color-text-secondary);
 }
 
 /* Divisor */
@@ -71,7 +71,7 @@
     display: flex;
     align-items: center;
     text-align: center;
-    color: #6c757d;
+    color: var(--color-text-secondary);
     font-size: 0.85rem;
     margin: 12px 0 24px 0;
 }
@@ -80,7 +80,7 @@
 .divider-flex::after {
     content: "";
     flex: 1;
-    border-bottom: 2px solid #153570;
+    border-bottom: 2px solid var(--color-accent);
 }
 
 .divider-flex:not(:empty)::before {

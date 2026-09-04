@@ -6,8 +6,8 @@
 }
 
 body {
-    background-color: #f4f6f9;
-    color: #333333;
+    background-color: var(--color-bg);
+    color: var(--color-text);
     padding: 40px;
 }
 
@@ -16,14 +16,14 @@ body {
 }
 
 h1 {
-    color: #153570;
+    color: var(--color-accent);
     font-size: 1.8rem;
     font-weight: 700;
     margin-bottom: 6px;
 }
 
 p {
-    color: #6c757d;
+    color: var(--color-text-secondary);
     font-size: 0.95rem;
     margin-bottom: 24px;
 }
@@ -32,8 +32,8 @@ p {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background-color: #153570;
-    color: #ffffff;
+    background-color: var(--color-accent);
+    color: var(--color-on-accent);
     text-decoration: none;
     padding: 10px 20px;
     border-radius: 6px;
@@ -45,7 +45,7 @@ p {
 }
 
 .login-button:hover {
-    background-color: #0e244d;
+    background-color: var(--color-accent-hover);
 }
 
 .login-button:active {
@@ -56,10 +56,10 @@ p {
 #statusFilter, 
 #priorityFilter {
     padding: 10px 14px;
-    border: 1px solid #dcdfe6;
+    border: 1px solid var(--color-border);
     border-radius: 6px;
-    background-color: #ffffff;
-    color: #333333;
+    background-color: var(--color-surface);
+    color: var(--color-text);
     font-size: 0.9rem;
     outline: none;
     transition: all 0.2s ease;
@@ -74,14 +74,14 @@ p {
 #searchInput:focus, 
 #statusFilter:focus, 
 #priorityFilter:focus {
-    border-color: #153570;
+    border-color: var(--color-accent);
     box-shadow: 0 0 0 3px rgba(21, 53, 112, 0.15);
 }
 
 #chamadasTable {
     width: 100%;
     border-collapse: collapse;
-    background-color: #ffffff;
+    background-color: var(--color-surface);
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
@@ -89,8 +89,8 @@ p {
 }
 
 #chamadasTable thead {
-    background-color: #153570;
-    color: #ffffff;
+    background-color: var(--color-accent);
+    color: var(--color-on-accent);
 }
 
 #chamadasTable th {
@@ -104,8 +104,8 @@ p {
 
 #chamadasTable td {
     padding: 14px 18px;
-    border-bottom: 1px solid #e2e8f0;
-    color: #4a5568;
+    border-bottom: 1px solid var(--color-border-soft);
+    color: var(--color-text);
     font-size: 0.9rem;
 }
 
@@ -114,7 +114,7 @@ p {
 }
 
 #chamadasTable tbody tr:hover {
-    background-color: #f8fafc;
+    background-color: var(--color-surface-alt);
 }
 
 @media (max-width: 768px) {
@@ -144,7 +144,7 @@ p {
 }
 
 .modal-content {
-    background-color: #ffffff;
+    background-color: var(--color-surface);
     padding: 30px;
     border-radius: 8px;
     width: 100%;
@@ -165,16 +165,16 @@ p {
     top: 15px;
     font-size: 26px;
     font-weight: bold;
-    color: #6c757d;
+    color: var(--color-text-secondary);
     cursor: pointer;
 }
 
 .close-btn:hover {
-    color: #153570;
+    color: var(--color-accent);
 }
 
 .modal h2 {
-    color: #153570;
+    color: var(--color-accent);
     margin-bottom: 20px;
     font-size: 1.3rem;
 }
@@ -189,30 +189,30 @@ p {
 .form-group label {
     font-size: 0.85rem;
     font-weight: 600;
-    color: #333333;
+    color: var(--color-text);
 }
 
 .form-group input, 
 .form-group select {
     padding: 10px;
-    border: 1px solid #dcdfe6;
+    border: 1px solid var(--color-border);
     border-radius: 6px;
     outline: none;
     font-size: 0.9rem;
-    background-color: #f8f9fa;
+    background-color: var(--color-surface-alt);
 }
 
 .form-group input:focus, 
 .form-group select:focus {
-    background-color: #ffffff;
-    border-color: #153570;
+    background-color: var(--color-surface);
+    border-color: var(--color-accent);
 }
 
 .save-button {
     width: 100%;
     padding: 12px;
-    background-color: #153570;
-    color: #ffffff;
+    background-color: var(--color-accent);
+    color: var(--color-on-accent);
     border: none;
     border-radius: 6px;
     font-size: 0.95rem;
@@ -223,5 +223,5 @@ p {
 }
 
 .save-button:hover {
-    background-color: #0e244d;
+    background-color: var(--color-accent-hover);
 }

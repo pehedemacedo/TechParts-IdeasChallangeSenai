@@ -1,0 +1,98 @@
+.navbar-logo {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+/* Variáveis de tema compartilhadas por todas as páginas do site */
+
+:root {
+    --color-bg: #f4f6f9;
+    --color-surface: #ffffff;
+    --color-surface-alt: #f8f9fa;
+    --color-text: #333333;
+    --color-text-secondary: #6c757d;
+    --color-border: #dcdfe6;
+    --color-border-soft: #e2e8f0;
+    --color-accent: #153570;
+    --color-accent-hover: #0e244d;
+    --color-on-accent: #ffffff;
+    --color-danger: #e74c3c;
+    --color-warning: #e67e22;
+    --color-success: #2e7d32;
+}
+
+/* Modo escuro */
+html[data-theme="dark"] {
+    --color-bg: #14161a;
+    --color-surface: #1e2126;
+    --color-surface-alt: #262a30;
+    --color-text: #e8e8e8;
+    --color-text-secondary: #9aa0a8;
+    --color-border: #363b42;
+    --color-border-soft: #363b42;
+    --color-accent: #4d7cff;
+    --color-accent-hover: #6f93ff;
+    --color-on-accent: #ffffff;
+    --color-danger: #ff6b6b;
+    --color-warning: #ffa94d;
+    --color-success: #51cf66;
+}
+
+/* Modo daltônico: troca vermelho/verde por uma paleta azul/laranja,
+   mais fácil de diferenciar para quem tem daltonismo */
+html[data-colorblind="true"] {
+    --color-danger: #d55e00;
+    --color-warning: #e69f00;
+    --color-success: #0072b2;
+}
+
+body {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Navbar: branca no modo claro, escura no modo escuro — segue o tema
+   do site automaticamente, sem depender de classe fixa por página. */
+.navbar {
+    --bs-navbar-color: var(--color-text);
+    --bs-navbar-hover-color: var(--color-accent);
+    --bs-navbar-active-color: var(--color-accent);
+    --bs-navbar-brand-color: var(--color-text);
+    --bs-navbar-brand-hover-color: var(--color-accent);
+    --bs-navbar-toggler-border-color: var(--color-border);
+    background-color: var(--color-surface);
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Ícone do botão "hamburger" é um SVG escuro por padrão do Bootstrap;
+   inverte no modo escuro para continuar visível. */
+html[data-theme="dark"] .navbar-toggler-icon {
+    filter: invert(1) grayscale(1);
+}
+
+/* Menu lateral (offcanvas) que abre pelo hamburger */
+.offcanvas {
+    --bs-offcanvas-bg: var(--color-surface);
+    --bs-offcanvas-color: var(--color-text);
+    --bs-offcanvas-border-color: var(--color-border);
+}
+
+/* Botão de fechar (X) do offcanvas também é um SVG escuro por padrão */
+html[data-theme="dark"] .btn-close {
+    filter: invert(1) grayscale(1);
+}
+
+/* Menu suspenso "Conta" */
+.dropdown-menu {
+    --bs-dropdown-bg: var(--color-surface);
+    --bs-dropdown-color: var(--color-text);
+    --bs-dropdown-link-color: var(--color-text);
+    --bs-dropdown-link-hover-bg: var(--color-surface-alt);
+    --bs-dropdown-link-hover-color: var(--color-text);
+    --bs-dropdown-divider-bg: var(--color-border);
+    --bs-dropdown-border-color: var(--color-border);
+}

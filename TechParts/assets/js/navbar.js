@@ -17,21 +17,16 @@ fetch("../assets/navbar.html")
 
         navbarContainer.innerHTML = data;
 
-        // Se a div tiver class="black"
+        // Se a div tiver class="black", a navbar fica fixa no topo
+        // (usada nas páginas cujo layout já reserva espaço para isso).
+        // A cor da navbar (branco no modo claro / escuro no modo escuro)
+        // não depende mais dessa classe: ela segue o tema do site
+        // automaticamente, via variáveis CSS em theme.css.
         if (navbarContainer.classList.contains("black")) {
 
             const navbar = document.getElementById("navbar");
-            const offcanvas = document.getElementById("offcanvasDarkNavbar");
 
-            navbar.classList.add(
-                "navbar-dark",
-                "bg-dark",
-                "fixed-top"
-            );
-
-            offcanvas.classList.add(
-                "text-bg-dark"
-            );
+            navbar.classList.add("fixed-top");
         }
 
     })

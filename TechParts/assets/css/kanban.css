@@ -4,15 +4,14 @@
 }
 
 body {
-    background-color: #f4f6f9;
-    color: #333333;
+    background-color: var(--color-bg);
+    color: var(--color-text);
     margin: 0;
-    padding-top: 75px;
 }
 
 .titulo {
     text-align: center;
-    color: #153570;
+    color: var(--color-accent);
     font-size: 1.6rem;
     font-weight: 700;
     margin: 0 0 6px 0;
@@ -36,19 +35,19 @@ body {
 }
 
 .kanban-block {
-    background-color: #ffffff;
+    background-color: var(--color-surface);
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     padding: 16px;
     width: 31%;
     min-width: 14rem;
     min-height: 4.5rem;
-    border-top: 4px solid #153570;
+    border-top: 4px solid var(--color-accent);
 }
 
 .kanban-block strong {
     display: block;
-    color: #153570;
+    color: var(--color-accent);
     font-size: 0.9rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -57,11 +56,11 @@ body {
 }
 
 #inprogress {
-    border-top-color: #e67e22;
+    border-top-color: var(--color-warning);
 }
 
 #done {
-    border-top-color: #2e7d32;
+    border-top-color: var(--color-success);
 }
 
 .task-button-block {
@@ -69,8 +68,8 @@ body {
 }
 
 #task-button {
-    background-color: #153570;
-    color: #ffffff;
+    background-color: var(--color-accent);
+    color: var(--color-on-accent);
     border: none;
     border-radius: 6px;
     width: 100%;
@@ -82,17 +81,17 @@ body {
 }
 
 #task-button:hover {
-    background-color: #0e244d;
+    background-color: var(--color-accent-hover);
 }
 
 .task {
-    background-color: #f8fafc;
-    border: 1px solid #e2e8f0;
+    background-color: var(--color-surface-alt);
+    border: 1px solid var(--color-border-soft);
     border-radius: 6px;
     margin: 0 0 8px 0;
     padding: 10px 12px;
     font-size: 0.9rem;
-    color: #4a5568;
+    color: var(--color-text);
     cursor: pointer;
     transition: box-shadow 0.15s ease, transform 0.1s ease;
 }
@@ -107,17 +106,17 @@ body {
 
 .create-new-task-block {
     display: none;
-    background-color: #ffffff;
+    background-color: var(--color-surface);
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    border-top: 4px solid #153570;
+    border-top: 4px solid var(--color-accent);
     padding: 20px;
     margin-top: 16px;
     flex-direction: column;
 }
 
 .create-new-task-block strong {
-    color: #153570;
+    color: var(--color-accent);
     font-size: 1rem;
     margin-bottom: 12px;
 }
@@ -132,22 +131,22 @@ body {
 .form-row-label {
     font-size: 0.85rem;
     font-weight: 600;
-    color: #333333;
+    color: var(--color-text);
 }
 
 .form-row-input {
     padding: 10px;
-    border: 1px solid #dcdfe6;
+    border: 1px solid var(--color-border);
     border-radius: 6px;
     outline: none;
     font-size: 0.9rem;
-    background-color: #f8f9fa;
+    background-color: var(--color-surface-alt);
     width: 100%;
 }
 
 .form-row-input:focus {
-    background-color: #ffffff;
-    border-color: #153570;
+    background-color: var(--color-surface);
+    border-color: var(--color-accent);
 }
 
 textarea {
@@ -166,8 +165,8 @@ textarea {
 #save-button,
 #cancel-button {
     flex: 1;
-    background-color: #153570;
-    color: #ffffff;
+    background-color: var(--color-accent);
+    color: var(--color-on-accent);
     border: none;
     border-radius: 6px;
     padding: 10px;
@@ -178,9 +177,9 @@ textarea {
 }
 
 #cancel-button {
-    background-color: #ffffff;
-    color: #153570;
-    border: 1px solid #153570;
+    background-color: var(--color-surface);
+    color: var(--color-accent);
+    border: 1px solid var(--color-accent);
 }
 
 #edit-button {
@@ -188,11 +187,11 @@ textarea {
 }
 
 #save-button:hover {
-    background-color: #0e244d;
+    background-color: var(--color-accent-hover);
 }
 
 #cancel-button:hover {
-    background-color: #f4f6f9;
+    background-color: var(--color-bg);
 }
 
 /* Divisor */
@@ -200,7 +199,7 @@ textarea {
     display: flex;
     align-items: center;
     text-align: center;
-    color: #6c757d;
+    color: var(--color-text-secondary);
     font-size: 0.85rem;
     margin: 12px 0 24px 0;
 }
@@ -209,7 +208,7 @@ textarea {
 .divider-flex::after {
     content: "";
     flex: 1;
-    border-bottom: 2px solid #153570;
+    border-bottom: 2px solid var(--color-accent);
 }
 
 .divider-flex:not(:empty)::before {
